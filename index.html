@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html lang="zh">
+    <head>
+        <meta charset="utf-8" />
+        <title>Hello World</title>
+        <script>
+            var pos = 0;
+            var word_list = ["你干嘛~~~", "你别点了", "求求你", "好吧", "没东西了", "真没东西了"]
+
+            function func() {
+                if (pos < word_list.length) {
+                    document.getElementById("123").innerHTML = word_list[pos++];
+                } else if (pos == word_list.length) {
+                    document.getElementById("e").style.display = "";
+                    ++pos;
+                } else {
+                    document.getElementById("123").innerHTML = "吓死你！";
+                    document.getElementsByTagName("html")[0].style.backgroundColor = "red";
+                    document.getElementById("e").style.display = "none";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1 style="text-align: center;">Hello World!</h1>
+        <div style="text-align: center;"><button
+            onclick="func()"
+            id="123"
+            style="height: 10vh;
+            width: 20vw;">???</button>
+        </div>
+        <div id="e" style="display: none;">吓你一跳</div>
+    </body>
+</html>
